@@ -1,0 +1,11 @@
+{
+  "name": "construct-merkle-tree",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rumble League Studios <hello@rl.games>",
+  "license": "MIT",
+  "dependencies": {
+    "merkletreejs": "0.2.27",
+    "web3-utils": "1.6.1"
+  }
+}
