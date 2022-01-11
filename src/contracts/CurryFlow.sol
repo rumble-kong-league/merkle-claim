@@ -5,14 +5,17 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
 import "./MerkleProof.sol";
 
+/// @notice Emitted when the account has already claimed
 error AlreadyClaimed(address account);
 
+/// @notice Emitted when invalid proof is submitted for claim
 error InvalidProof();
 
+/// @notice Emitted when unauthorized party is calling
 error NotAdmin(address account);
 
-// todo: docs
-
+/// @title CurryFlow
+/// @author Rumble Kong League
 contract CurryFlow is ERC721Enumerable {
     bytes32 public immutable merkleRoot;
     mapping(uint256 => uint256) private claimedBitMap;
@@ -30,6 +33,10 @@ contract CurryFlow is ERC721Enumerable {
         owner = msg.sender;
     }
 
+    /// @notice Used to mint the NFT if qualified.
+    /// @param account Account that is eligible for mint.
+    /// @param qty Quantity of NFTs to mint.
+    /// @param merkleProof Merkle proof.
     function claim(
         address account,
         uint256 qty,
@@ -53,12 +60,16 @@ contract CurryFlow is ERC721Enumerable {
         }
     }
 
+    /// @dev Checks if NFT was claimed.
+    /// @param index Erc20 name of this token.
     function isClaimed(uint256 index) public view returns (bool) {
         uint256 claimedWord = claimedBitMap[index / 256];
         uint256 mask = (1 << (index % 256));
         return claimedWord & mask == mask;
     }
 
+    /// @dev Sets if NFT was claimed.
+    /// @param index Erc20 name of this token.
     function _setClaimed(uint256 index) private {
         uint256 claimedWordIndex = index / 256;
         claimedBitMap[claimedWordIndex] =
@@ -66,23 +77,25 @@ contract CurryFlow is ERC721Enumerable {
             (1 << (index % 256));
     }
 
+    /// @dev Base URI read function.
     function _baseURI() internal view override returns (string memory) {
         return uri;
     }
 
+    /// @dev Sets the Base URI.
+    /// @param uri_ New Base URI.
     function setURI(string calldata uri_) external {
         if (msg.sender != owner) {
             revert NotAdmin(msg.sender);
         }
-
         uri = uri_;
     }
 
+    /// @dev Revoke's admin's ownership. Implies they can't change the base URI.
     function revokeOwnership() external {
         if (msg.sender != owner) {
             revert NotAdmin(msg.sender);
         }
-
         owner = address(0);
     }
 }

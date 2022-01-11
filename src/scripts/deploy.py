@@ -23,11 +23,16 @@ if __name__ == "__main__":
 # This is used to copy and paste into brownie console when testing the contract (validity of proofs)
 # To obtain these proofs, use `index.js` in `construct-merkle-tree/`
 # proof = [
-#     HexBytes("e2aaf7e94d9cad66b958f8e20cceea4ca827b9b61d171c07647c5b5801b059f9"),
-#     HexBytes("7484cdee31d6583f1e454d48edfd2bec9c107265ab9f474ac5e6dab525af0c92"),
-#     HexBytes("171c5aecee0d0bb2b60072a3946de156d4887a98105e2ec4b4645d205e1270c2"),
-#     HexBytes("a04f2d2614454afe79d823fad97430a6979c5791992cab4ea75d64259b1cbefb"),
-#     HexBytes("b6e7315cb88fe61a22d2dfb4b5819caa4e8f43bc6b9e212e1a36e30cd218e727"),
-#     HexBytes("f27dda59f9284c0a27168b600e59fa3bf3ce1b81c4db4d8e10c4f0eebeea066b"),
-#     HexBytes("35b75b1e394c95742f3ea46850519c3400f06f53c2c183101e4e547abe1f8403"),
+#     HexBytes("702c067b511a19446d86e5810d31312aaf266c8fa0f9defe675687f5bd29f926"),
+#     HexBytes("459cc03f11470f406b801e8c5a8e7ee1edfcb07440d9d14407622aa075d73af3"),
+#     HexBytes("721be47c8a69e21ac5fc30cb646cf7428007c339ddc40609620e9e97c4e3b47c"),
+#     HexBytes("11697a9535f60df81b433259aaf49cb4db68122227c47af90dafa708eb3cc67e"),
+#     HexBytes("3ddd5ece6835609d29fa96ce72e566bc0b65b15c77b56e296fb37c24bd278a4a"),
+#     HexBytes("422b4b964ef1405417b8852ba6104883596cf6edf351ae0f8f3a703aeea09fc9"),
+#     HexBytes("42073b4b6a6c61e49869aaba1722599239c22c7fe9116c7fc1f297b8b2068b91"),
+#     HexBytes("f2a3a025b94ab346e79a56f8c919a9c786e8ce6fdf537be92f21a0d16fb104b4"),
+#     HexBytes("f2060a71130c7bcb97e43c5de7a3d0467c4a512e2ffae79ea2f85c7db9e8cf56"),
+#     HexBytes("045c94ff925c041498a183f977ca5b8ec69f1b0427acfb1e92cd47cff4e85b0f"),
+#     HexBytes("78f7aaee797d5dda64c4d877493136f457d3df992793608b1104e5fd0500b6c9"),
+#     HexBytes("b5ced62e1befa4768c7bb962a16e89b72f7841c9d3afe8bd6e38bb669f933c00"),
 # ]
