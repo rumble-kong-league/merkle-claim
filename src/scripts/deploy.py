@@ -3,11 +3,11 @@ from hexbytes import HexBytes
 
 
 def main():
-    a = accounts.load("<account_name>")
+    a = accounts.load("<your account name>")
     from_a = {"from": a}
 
     root_hash = HexBytes(
-        "0xf5bc31a35860d663e02e7a7f65e121db2e1c60597b9d045b5fcdcf2a4e695a4c"
+        "0x7958644db5b336dc022fe122ff9342c8e461a4e6533fb32cd9f8dc65eaecade4"
     )
 
     # This deploys curry flow merkle ERC721 contract
